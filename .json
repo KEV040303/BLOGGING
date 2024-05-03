@@ -1,0 +1,106 @@
+[
+{
+    "C": "createUser"
+},
+{
+    "nombre": "",
+    "email": "",
+    "contraseña": "",
+    "usuario": "", 
+    "roleId": ""
+},
+{
+    "C": "updateUser"
+},
+{
+    "nombre": "",
+    "email": "",
+    "contraseña": "",
+    "usuario": "", 
+    "roleId": "",
+    "userId": ""
+},
+{
+    "C": "deleteUser"
+},
+{
+    "userId": ""
+},
+{
+    "C": "getUsers"
+},
+{
+    "roleId": ""
+},
+{
+    "C": "createPost"
+},
+{
+    "contenido": "",
+    "titulo": "",
+    "usuarioId": "",
+    "categorias": ""
+},
+{
+    "C": "updatePost"
+},
+{
+    "contenido": "",
+    "titulo": "",
+    "categorias": "",
+    "usuarioId": ""
+},
+{
+    "C": "deletePost"
+},
+{
+    "usuarioId": ""
+},
+{
+    "C": "getCategory"
+},
+{
+    "roleId": ""
+},
+{
+    "C": "createCategory"
+},
+{
+    "roleId": "",
+    "nombre": ""
+},
+{
+    "C": "updateCategory"
+},
+{
+    "roleId": "",
+    "nombre": ""
+},
+{
+    "C": "deleteCategory"
+},
+{
+    "roleId": ""
+},
+{
+    "C": "createComment"
+},
+{
+    "id": "", 
+    "comentario": "",
+    "usuarioId": ""
+},
+{
+    "C": "updateComment"
+},
+{
+    "comentario": "",
+    "userId": ""
+},
+{
+    "C": "deleteComment"
+},
+{
+    "userId": ""
+}
+]
