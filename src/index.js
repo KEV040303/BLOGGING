@@ -1,29 +1,26 @@
 import express from 'express'
 import { PORT } from './config/config.js'
-import { pool } from './config/db.js'
+import { createUser, updateUser, deleteUser, getUsers, createPost, updatePost } from './controller.js'
 
 const app = express()
 
 app.use(express.json())
 
-// Ruta para crear un nuevo usuario
-app.post('/user/create', async (req, res) => {
-  try {
-    const { nombre, email, contraseña, usuario, roleId } = req.body
+// Ruta para crear el nuevo usuario
+app.post('/user', createUser)
+// Ruta para actualizar el usuario
+app.put('/user/:id', updateUser)
+// Ruta para eliminar el usuario
+app.delete('/user/:id', deleteUser)
+// Ruta para obtener todos los usuarios
+app.get('/users', getUsers)
 
-    if (!nombre || !email || !contraseña || !usuario || !roleId) {
-      return res.status(400).json({ message: 'Todos los campos son obligatorios' })
-    }
-
-    await pool.execute('INSERT INTO usuarios (nombre, email, contraseña, usuario, role_Id) VALUES (?, ?, ?, ?, ?)', [nombre, email, contraseña, usuario, roleId])
-
-    res.status(201).json({ message: 'Usuario creado exitosamente', user: { nombre, email, usuario, roleId } })
-  } catch (err) {
-    console.error('Error al insertar usuario:', err)
-
-    return res.status(500).json({ message: 'Error al crear el usuario' })
-  }
-})
+// Ruta para crear una publicacion
+app.post('/post', createPost)
+// Ruta para actualizar una publicacion
+app.put('/post/:id', updatePost)
+// Ruta para eliminar una publicacion
+app.delete('/post/:id', deleteUser)
 
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`)
